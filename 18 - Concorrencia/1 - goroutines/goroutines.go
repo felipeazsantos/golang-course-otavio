@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// CONCORRÊNCIA != PARALELISMO
-	// goroutines -> executa a função mas não espera o retorno para continuar a execução dos próximos códigos
+	// 1 - goroutines -> executa a função mas não espera o retorno para continuar a execução dos próximos códigos
 	// Funções assincronas
 	go escrever("Olá mundo!")
 	escrever("Programando em GO!")

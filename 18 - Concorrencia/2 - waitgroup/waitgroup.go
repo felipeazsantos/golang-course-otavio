@@ -9,7 +9,7 @@ import (
 func main() {
 	var waitgroup sync.WaitGroup
 
-	waitgroup.Add(2) // quantidade de goroutines para serem executadas em concorrencia
+	waitgroup.Add(2) // quantidade de 1 - goroutines para serem executadas em concorrencia
 
 	go func () {
 		escrever("Olá mundo!")
