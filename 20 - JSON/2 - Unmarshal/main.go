@@ -1,5 +1,36 @@
 package main
 
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+)
+
+type cachorro struct {
+	Nome string `json:"nome"`
+	Raca string `json:"raca"`
+	Idade int `json:"idade"`
+}
+
 func main() {
-	$END$
+	cachorroEmJSON := `{"nome":"Rex","raca":"Dalmata","idade":3}`
+
+	var c cachorro
+
+	if erro := json.Unmarshal([]byte(cachorroEmJSON), &c); erro != nil {
+		log.Fatal(erro)
+	}
+
+	fmt.Println(c)
+
+	cachorroEmJSON2 := `{"nome":"Toby","raca":"Poodle"}`
+
+	c2 := make(map[string]string)
+
+	if erro := json.Unmarshal([]byte(cachorroEmJSON2), &c2); erro != nil {
+		log.Fatal(erro)
+	}
+
+	fmt.Println(c2)
+
 }
